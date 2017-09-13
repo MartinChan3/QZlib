@@ -4,20 +4,30 @@
 #include <QStringList>
 #include "minizip/zip.h"
 
-
+///////////////////////////////////////////////////////////////////////////////
+// Copyright    :
+// Name         :qzlib.h
+// Introduction :Wrap zip function
+//
+// Author       :MartinChan
+// Version      :1.0
+// Date         :2017-09-13
+// Explanation  :
+///////////////////////////////////////////////////////////////////////////////
 class QZlib
 {
 public:
     QZlib();
     ~QZlib();
 
-    bool AddDir(QString);
-    bool GenerateZip(const char*,const char* = Q_NULLPTR);
+    /*The AddDir and GenerateZip is the base functions you could use*/
+    bool AddDir(QString);                                 //Add directory
+    bool GenerateZip(const char*,const char* = Q_NULLPTR);//Generate Zip file
 private:
     zipFile zf;
-    QStringList dirs;
-    QByteArray arr;
-    uLong crc;
+    QStringList dirs;                                     //Store the diretories
+    QByteArray arr;                                       //As temp array for store file
+    uLong crc;                                            //Store crc file
 
     bool ZipSinglePNG(QString,const char*);
     tm_zip_s GenerateZipTimeInfo(uint year = 1991,

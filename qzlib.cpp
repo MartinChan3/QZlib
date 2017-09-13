@@ -15,6 +15,13 @@ QZlib::~QZlib()
 
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// Function Name    : AddDir
+// Introduction     : Add the directory u want to zip
+// Parameters       : (I) QString dir : the path,could be absolute or relative
+// Return           : true  -- Path is valid
+//                    false -- Path is invalid
+////////////////////////////////////////////////////////////////////////////////
 bool QZlib::AddDir(QString dir)
 {
     QDir tmp_dir;
@@ -29,6 +36,14 @@ bool QZlib::AddDir(QString dir)
     return true;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// Function Name    : GenerateZip
+// Introduction     : Generate the zip file at specified path with specified password
+// Parameters       : (I) cost char* zip_name : the path and name that u want to use
+//                    (I) const char *password : the password of zip
+// Return           : true  -- It generate right zip file
+//                    false -- It has faults when generate zip file
+////////////////////////////////////////////////////////////////////////////////
 bool QZlib::GenerateZip(const char* zip_name,const char *password)
 {
     if (dirs.size()<1)
@@ -40,9 +55,9 @@ bool QZlib::GenerateZip(const char* zip_name,const char *password)
 
     QDir tmp_dir;
     QStringList filter;
-    filter<<"*.png"<<"*.PNG"<<"*.jpg"<<"*.JPG";//设定过滤类型
+    filter<<"*.png"<<"*.PNG"<<"*.jpg"<<"*.JPG";//Set the filter kinds here
 
-    //遍历各个文件夹
+    //
     for (int i = 0; i < dirs.size() ; i++ )
     {
         tmp_dir.setPath(dirs.at(i));
@@ -65,6 +80,14 @@ bool QZlib::GenerateZip(const char* zip_name,const char *password)
     return true;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// Function Name    : ZipSinglePNG
+// Introduction     : Store a single file(not only png) in a zip
+// Parameters       : (I) QString file_str : The file name
+//                    (I) const char *password : the password of zip
+// Return           : true  -- It create the right data in zip file
+//                    false -- It didn't create the data correctly in zip file
+////////////////////////////////////////////////////////////////////////////////
 bool QZlib::ZipSinglePNG(QString file_str, const char * password)
 {
     QFile tmp_png_file(file_str);
@@ -90,17 +113,17 @@ bool QZlib::ZipSinglePNG(QString file_str, const char * password)
                                                  &tmp_file_info,
                                                  NULL,
                                                  0,
-                                              NULL,
-                                              0,
-                                              "UnionTech utk",
-                                              Z_DEFLATED,
-                                              Z_DEFAULT_COMPRESSION,
-                                              0,
-                                              15,
-                                              8,
-                                              Z_DEFAULT_STRATEGY,
-                                              password,
-                                              crc32(crc,(uchar*)(arr.data()),arr.size()));
+                                                 NULL,
+                                                 0,
+                                                 "UnionTech utk",
+                                                 Z_DEFLATED,
+                                                 Z_DEFAULT_COMPRESSION,
+                                                 0,
+                                                 15,
+                                                 8,
+                                                 Z_DEFAULT_STRATEGY,
+                                                 password,
+                                                 crc32(crc,(uchar*)(arr.data()),arr.size()));
     if (flag_open_new_flag != ZIP_OK)
     {
         tmp_png_file.close();

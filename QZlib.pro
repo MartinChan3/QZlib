@@ -1,6 +1,13 @@
 #-------------------------------------------------
 #
 # Project created by QtCreator 2017-09-12T14:38:45
+# Project Name: QZlib
+# Introduction: This lib was used to zip file (get
+#               .zip archive).It warpped zlib 1.2.8
+#               and Minizip 1.1 and give some simple
+#               functions to use when u want to zip
+#               many folders to one zip with password
+# Author      : MartinChan e-mail to:bycy0801@163.com
 #
 #-------------------------------------------------
 
