@@ -356,7 +356,18 @@ compiler_clean:
 		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qfileinfo.h \
 		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qfile.h \
 		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qfiledevice.h \
-		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qshareddata.h
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qshareddata.h \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\QDebug \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qdebug.h \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qhash.h \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qmap.h \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qtextstream.h \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qlocale.h \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qvariant.h \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qvector.h \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qpoint.h \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qset.h \
+		D:\Qt\5.3\msvc2012_opengl\include\QtCore\qcontiguouscache.h
 
 ####### Install
 
